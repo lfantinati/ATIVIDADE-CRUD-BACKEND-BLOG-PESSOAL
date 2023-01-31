@@ -27,6 +27,8 @@ public class Postagem {
     private LocalDateTime data;
 
 
+
+
     public long getId() {
         return id;
     }
@@ -58,4 +60,6 @@ public class Postagem {
     public void setData(LocalDateTime data) {
         this.data = data;
     }
+
+
 }
