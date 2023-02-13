@@ -38,6 +38,17 @@ public class Usuario {
     private List<Postagem> postagem;
 
 
+    public Usuario(Long id, String nome, String usuario, String senha, String foto) {
+        this.Id = id;
+        this.nome = nome;
+        this.usuario = usuario;
+        this.senha = senha;
+        this.foto = foto;
+    }
+
+
+
+
     public long getId() {
         return Id;
     }
@@ -82,7 +93,13 @@ public class Usuario {
         return postagem;
     }
 
+
     public void setPostagem(List<Postagem> postagem) {
         this.postagem = postagem;
     }
+
+    public Usuario() {
+    }
+
+
 }
