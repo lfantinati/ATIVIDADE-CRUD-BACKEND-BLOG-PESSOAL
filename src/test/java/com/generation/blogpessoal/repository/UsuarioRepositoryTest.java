@@ -1,4 +1,4 @@
-package repository;
+package com.generation.blogpessoal.repository;
 
 import com.generation.blogpessoal.model.Usuario;
 import com.generation.blogpessoal.model.Usuario;
