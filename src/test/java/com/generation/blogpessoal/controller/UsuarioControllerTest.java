@@ -66,15 +66,18 @@ public class UsuarioControllerTest {
     @Test
     @DisplayName("Atualizar um Usuário")
     public void deveAtualizarUmUsuario() {
-        Optional<Usuario> usuarioCadastrado = usuarioService.cadastrarUsuario(new Usuario(0L, "Juliana Andrews Ramos", "juliana_ramos@email.com.br", "juliana123", "https://animes.olanerd.com/wp-content/uploads/2022/10/1666833923_924_A-reputacao-de-Sakura-Haruno-como-o-personagem-mais-fraco.jpg"));
 
-        Usuario usuarioUpgrade = new Usuario(usuarioCadastrado.get().getId(), "Juliana Andrews Ramos", "juliana_ramos@email.com.br", "juliana123", "https://animes.olanerd.com/wp-content/uploads/2022/10/1666833923_924_A-reputacao-de-Sakura-Haruno-como-o-personagem-mais-fraco.jpg");
+        Optional<Usuario> usuarioCadastrado = usuarioService.cadastrarUsuario(new Usuario(0L,
+                "Juliana Andrews", "juliana_andrews@email.com.br", "juliana123", "https://i.imgur.com/yDRVeK7.jpg"));
 
-        HttpEntity<Usuario> corpoRequisicao = new HttpEntity<Usuario>(usuarioUpgrade);
+        Usuario usuarioUpdate = new Usuario(usuarioCadastrado.get().getId(),
+                "Juliana Andrews Ramos", "juliana_ramos@email.com.br", "juliana123" , "https://i.imgur.com/yDRVeK7.jpg");
+
+        HttpEntity<Usuario> corpoRequisicao = new HttpEntity<Usuario>(usuarioUpdate);
 
         ResponseEntity<Usuario> corpoResposta = testRestTemplate
                 .withBasicAuth("root@root.com", "rootroot")
-                .exchange("/usuarios/cadastrar", HttpMethod.PUT, corpoRequisicao, Usuario.class);
+                .exchange("/usuarios/atualizar", HttpMethod.PUT, corpoRequisicao, Usuario.class);
 
         assertEquals(HttpStatus.OK, corpoResposta.getStatusCode());
         assertEquals(corpoRequisicao.getBody().getNome(), corpoResposta.getBody().getNome());
