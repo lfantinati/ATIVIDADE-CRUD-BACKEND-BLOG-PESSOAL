@@ -14,7 +14,7 @@
 	<name>blogpessoal</name>
 	<description>projeto Blog Pessoal</description>
 	<properties>
-		<java.version>18</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<!-- Dependência da Spring Security -->
@@ -90,14 +90,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>18</source>
-					<target>18</target>
-				</configuration>
-			</plugin>
+
 		</plugins>
 	</build>
 
