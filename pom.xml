@@ -14,7 +14,7 @@
 	<name>blogpessoal</name>
 	<description>projeto Blog Pessoal</description>
 	<properties>
-		<java.version>19</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<!-- Dependência da Spring Security -->
